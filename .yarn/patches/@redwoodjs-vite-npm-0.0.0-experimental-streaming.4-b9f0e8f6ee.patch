@@ -1,0 +1,24 @@
+diff --git a/dist/runFeServer.js b/dist/runFeServer.js
+index a85dcda496bb6de225fa002466b464c83d955261..1521c9d0bc1f3e9c6aaf69d3ff1b6364de6207e3 100644
+--- a/dist/runFeServer.js
++++ b/dist/runFeServer.js
+@@ -73,7 +73,7 @@ async function runFeServer() {
+       [`^${rwConfig.web.apiUrl}`]: '' // remove base path
+     },
+ 
+-    target: `http://localhost:${rwConfig.api.port}`
++    target: `http://0.0.0.0:${rwConfig.api.port}`
+   }));
+ 
+   // 👉 3. Handle all other requests with the server entry
+@@ -183,7 +183,7 @@ async function runFeServer() {
+     }
+     return;
+   });
+-  app.listen(rwConfig.web.port);
+-  console.log(`Started production FE server on http://localhost:${rwConfig.web.port}`);
++  app.listen(rwConfig.web.port, '0.0.0.0');
++  console.log(`Started production FE server on http://0.0.0.0:${rwConfig.web.port}`);
+ }
+ runFeServer();
+\ No newline at end of file

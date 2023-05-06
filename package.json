@@ -21,5 +21,9 @@
   "prisma": {
     "seed": "yarn rw exec seed"
   },
-  "packageManager": "yarn@3.5.0"
+  "packageManager": "yarn@3.5.0",
+  "resolutions": {
+    "@redwoodjs/api-server@0.0.0-experimental-streaming.4": "patch:@redwoodjs/api-server@npm%3A0.0.0-experimental-streaming.4#./.yarn/patches/@redwoodjs-api-server-npm-0.0.0-experimental-streaming.4-8b0a79975c.patch",
+    "@redwoodjs/vite@0.0.0-experimental-streaming.4": "patch:@redwoodjs/vite@npm%3A0.0.0-experimental-streaming.4#./.yarn/patches/@redwoodjs-vite-npm-0.0.0-experimental-streaming.4-b9f0e8f6ee.patch"
+  }
 }
