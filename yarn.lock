@@ -4698,7 +4698,7 @@ __metadata:
 
 "@redwoodjs/vite@patch:@redwoodjs/vite@npm%3A0.0.0-experimental-streaming.4#./.yarn/patches/@redwoodjs-vite-npm-0.0.0-experimental-streaming.4-b9f0e8f6ee.patch::locator=root-workspace-0b6124%40workspace%3A.":
   version: 0.0.0-experimental-streaming.4
-  resolution: "@redwoodjs/vite@patch:@redwoodjs/vite@npm%3A0.0.0-experimental-streaming.4#./.yarn/patches/@redwoodjs-vite-npm-0.0.0-experimental-streaming.4-b9f0e8f6ee.patch::version=0.0.0-experimental-streaming.4&hash=bf690a&locator=root-workspace-0b6124%40workspace%3A."
+  resolution: "@redwoodjs/vite@patch:@redwoodjs/vite@npm%3A0.0.0-experimental-streaming.4#./.yarn/patches/@redwoodjs-vite-npm-0.0.0-experimental-streaming.4-b9f0e8f6ee.patch::version=0.0.0-experimental-streaming.4&hash=37287f&locator=root-workspace-0b6124%40workspace%3A."
   dependencies:
     "@babel/runtime-corejs3": 7.21.0
     "@redwoodjs/internal": 0.0.0-experimental-streaming.4
@@ -4717,7 +4717,7 @@ __metadata:
     rw-dev-fe: dist/devFeServer.js
     rw-serve-fe: dist/runFeServer.js
     vite: bins/vite.mjs
-  checksum: 96b9872e6513949a76e3c204d110c1bbca305eeba615164cde38237fa8f3fd6e0ce4e37277466ccf868f4d42ab0308b04790bc6e3ce1331bb7d268ff149554ac
+  checksum: 1b0d71675dbda6c40af282fa6440b019465fe777592dae52330e1b5c40bac4041446e1e374f5e2e0d712e6634c7c29b2b0d00008652103ed8726759e0e75be7c
   languageName: node
   linkType: hard
 
