@@ -4196,6 +4196,36 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@redwoodjs/api-server@patch:@redwoodjs/api-server@npm%3A0.0.0-experimental-streaming.4#./.yarn/patches/@redwoodjs-api-server-npm-0.0.0-experimental-streaming.4-8b0a79975c.patch::locator=root-workspace-0b6124%40workspace%3A.":
+  version: 0.0.0-experimental-streaming.4
+  resolution: "@redwoodjs/api-server@patch:@redwoodjs/api-server@npm%3A0.0.0-experimental-streaming.4#./.yarn/patches/@redwoodjs-api-server-npm-0.0.0-experimental-streaming.4-8b0a79975c.patch::version=0.0.0-experimental-streaming.4&hash=51ae3f&locator=root-workspace-0b6124%40workspace%3A."
+  dependencies:
+    "@babel/plugin-transform-runtime": 7.21.0
+    "@babel/runtime-corejs3": 7.21.0
+    "@fastify/http-proxy": 9.0.0
+    "@fastify/static": 6.9.0
+    "@fastify/url-data": 5.3.1
+    ansi-colors: 4.1.3
+    chalk: 4.1.2
+    chokidar: 3.5.3
+    core-js: 3.29.1
+    fast-json-parse: 1.0.3
+    fastify: 4.15.0
+    fastify-raw-body: 4.2.0
+    lodash.escape: 4.0.1
+    pretty-bytes: 5.6.0
+    pretty-ms: 7.0.1
+    qs: 6.11.1
+    split2: 4.2.0
+    yargs: 17.7.1
+  bin:
+    rw-api-server-watch: dist/watch.js
+    rw-log-formatter: dist/logFormatter/bin.js
+    rw-server: dist/index.js
+  checksum: da1a9d59f860e99b2ee8bfda4734921f6db9903b1a893ba9098cb2ca41af4abba765dac4ea54219a6c275f232497d918bcc8fceef540d10f91334423d161b30d
+  languageName: node
+  linkType: hard
+
 "@redwoodjs/api@npm:0.0.0-experimental-streaming.4":
   version: 0.0.0-experimental-streaming.4
   resolution: "@redwoodjs/api@npm:0.0.0-experimental-streaming.4"
@@ -4663,6 +4693,31 @@ __metadata:
     rw-serve-fe: dist/runFeServer.js
     vite: bins/vite.mjs
   checksum: 2d8268579050f18e18e02deb9e785dd96a5e436c4b9b29d5ea97a0c1f6f172d4560332f9ba63b46429143dd6b223d0464ed7d2aa5942b8d2260b7b11a35d8253
+  languageName: node
+  linkType: hard
+
+"@redwoodjs/vite@patch:@redwoodjs/vite@npm%3A0.0.0-experimental-streaming.4#./.yarn/patches/@redwoodjs-vite-npm-0.0.0-experimental-streaming.4-b9f0e8f6ee.patch::locator=root-workspace-0b6124%40workspace%3A.":
+  version: 0.0.0-experimental-streaming.4
+  resolution: "@redwoodjs/vite@patch:@redwoodjs/vite@npm%3A0.0.0-experimental-streaming.4#./.yarn/patches/@redwoodjs-vite-npm-0.0.0-experimental-streaming.4-b9f0e8f6ee.patch::version=0.0.0-experimental-streaming.4&hash=bf690a&locator=root-workspace-0b6124%40workspace%3A."
+  dependencies:
+    "@babel/runtime-corejs3": 7.21.0
+    "@redwoodjs/internal": 0.0.0-experimental-streaming.4
+    "@redwoodjs/project-config": 0.0.0-experimental-streaming.4
+    "@vitejs/plugin-react": 3.1.0
+    buffer: 6.0.3
+    core-js: 3.29.1
+    dotenv-defaults: 5.0.2
+    express: 4.18.2
+    http-proxy-middleware: 2.0.6
+    vite: 4.2.1
+    vite-plugin-commonjs: 0.6.2
+    vite-plugin-environment: 1.1.3
+    vite-plugin-html: 3.2.0
+  bin:
+    rw-dev-fe: dist/devFeServer.js
+    rw-serve-fe: dist/runFeServer.js
+    vite: bins/vite.mjs
+  checksum: 96b9872e6513949a76e3c204d110c1bbca305eeba615164cde38237fa8f3fd6e0ce4e37277466ccf868f4d42ab0308b04790bc6e3ce1331bb7d268ff149554ac
   languageName: node
   linkType: hard
 
