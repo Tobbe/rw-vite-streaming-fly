@@ -8,4 +8,5 @@ fi
 
 # npx rw-server --port ${PORT} $@
 node node_modules/@redwoodjs/api-server/dist/index.js api &
+sleep 10
 yarn rw-serve-fe
