@@ -1,12 +1,12 @@
 diff --git a/dist/runFeServer.js b/dist/runFeServer.js
-index a85dcda496bb6de225fa002466b464c83d955261..7683ef773305c661cd07be549423f8e07e999f13 100644
+index a85dcda496bb6de225fa002466b464c83d955261..b94465d69e7e01206a3bd816a0aeefca61d937c5 100644
 --- a/dist/runFeServer.js
 +++ b/dist/runFeServer.js
 @@ -59,6 +59,30 @@ async function runFeServer() {
    // 👉 1. Use static handler for assets
    // For CF workers, we'd need an equivalent of this
    app.use('/assets', _express.default.static(rwPaths.web.dist + '/assets'));
-+
++  
 +  console.log('')
 +  console.log('')
 +  console.log('')
@@ -30,23 +30,23 @@ index a85dcda496bb6de225fa002466b464c83d955261..7683ef773305c661cd07be549423f8e0
 +  console.log('')
 +  console.log('')
 +  console.log('')
-
+ 
    // 👉 2. Proxy the api server
    // @TODO we need to be able to specify whether proxying is required or not
 @@ -73,7 +97,7 @@ async function runFeServer() {
        [`^${rwConfig.web.apiUrl}`]: '' // remove base path
      },
-
+ 
 -    target: `http://localhost:${rwConfig.api.port}`
 +    target: `http://0.0.0.0:${rwConfig.api.port}`
    }));
-
+ 
    // 👉 3. Handle all other requests with the server entry
 @@ -86,6 +110,17 @@ async function runFeServer() {
        const {
          serverEntry
        } = await (specifier => new _promise.default(r => r(`${specifier}`)).then(s => (0, _interopRequireWildcard2.default)(require(s))))(_path.default.join(rwPaths.web.distServer, '/entry-server.js'));
-+
++      
 +      console.log('serverEntry imported')
 +      console.log('serverEntry imported')
 +      console.log('serverEntry imported')
@@ -57,24 +57,25 @@ index a85dcda496bb6de225fa002466b464c83d955261..7683ef773305c661cd07be549423f8e0
 +      console.log('serverEntry imported')
 +      console.log('serverEntry imported')
 +      console.log('serverEntry imported')
-
+ 
        // @MARK should we generate individual express Routes for each Route?
        // This would make handling 404s and favicons / public assets etc. easier
-@@ -97,6 +132,13 @@ async function runFeServer() {
+@@ -97,6 +132,14 @@ async function runFeServer() {
          const matches = [...(0, _matchAll.default)(url).call(url, new RegExp(route.matchRegexString, 'g'))];
          return matches.length > 0;
        });
-+
-+      console.log('currentRoute', currentRoute)
-+      console.log('currentRoute', currentRoute)
-+      console.log('currentRoute', currentRoute)
-+      console.log('currentRoute', currentRoute)
-+      console.log('currentRoute', currentRoute)
-+      console.log('currentRoute', currentRoute)
-
++      
++      console.log('currentRoute')
++      console.log('currentRoute')
++      console.log('currentRoute')
++      console.log('currentRoute')
++      console.log('currentRoute')
++      console.log('currentRoute')
++      console.log('currentRoute')
+ 
        // Doesn't match any of the defined Routes
        // Render 404 page, and send back 404 status
-@@ -137,6 +179,15 @@ async function runFeServer() {
+@@ -137,6 +180,15 @@ async function runFeServer() {
          return res.redirect(currentRoute.redirect.to);
        }
        if (currentRoute && currentRoute.routeHooks) {
@@ -90,8 +91,8 @@ index a85dcda496bb6de225fa002466b464c83d955261..7683ef773305c661cd07be549423f8e0
          try {
            const routeHooks = await (specifier => new _promise.default(r => r(`${specifier}`)).then(s => (0, _interopRequireWildcard2.default)(require(s))))(_path.default.join(rwPaths.web.distRouteHooks, currentRoute.routeHooks));
            const serverData = await routeHooks.serverData(req);
-@@ -151,6 +202,14 @@ async function runFeServer() {
-
+@@ -151,6 +203,14 @@ async function runFeServer() {
+ 
        // Serialize route context so it can be passed to the client entry
        const serialisedRouteContext = (0, _stringify.default)(routeContext);
 +      console.log('serialisedRouteContext', serialisedRouteContext)
@@ -105,7 +106,7 @@ index a85dcda496bb6de225fa002466b464c83d955261..7683ef773305c661cd07be549423f8e0
        const {
          pipe
        } = (0, _server.renderToPipeableStream)(
-@@ -177,13 +236,56 @@ async function runFeServer() {
+@@ -177,13 +237,56 @@ async function runFeServer() {
          // }
        });
      } catch (e) {
@@ -113,6 +114,12 @@ index a85dcda496bb6de225fa002466b464c83d955261..7683ef773305c661cd07be549423f8e0
 +      console.log('')
 +      console.log('')
 +      console.log('')
++      console.log('catch (e)')
++      console.log('catch (e)')
++      console.log('catch (e)')
++      console.log('catch (e)')
++      console.log('catch (e)')
++      console.log('catch (e)')
 +      console.log('')
 +      console.log('')
 +      console.log('e', e)
@@ -129,9 +136,7 @@ index a85dcda496bb6de225fa002466b464c83d955261..7683ef773305c661cd07be549423f8e0
      }
      return;
    });
--  app.listen(rwConfig.web.port);
--  console.log(`Started production FE server on http://localhost:${rwConfig.web.port}`);
-+
++  
 +  app.on('error', (err) => {
 +    console.log('app.on error')
 +    console.log('app.on error')
@@ -153,13 +158,8 @@ index a85dcda496bb6de225fa002466b464c83d955261..7683ef773305c661cd07be549423f8e0
 +    console.log('')
 +  })
 +
-+  app.listen(rwConfig.web.port, () => {
-+    console.log('app.listen callback')
-+    console.log('app.listen callback')
-+    console.log('app.listen callback')
-+    console.log('app.listen callback')
-+    console.log('app.listen callback')
-+  });
+   app.listen(rwConfig.web.port);
+-  console.log(`Started production FE server on http://localhost:${rwConfig.web.port}`);
 +
 +  console.log(`Started production FE server on http://0.0.0.0:${rwConfig.web.port}`);
  }
