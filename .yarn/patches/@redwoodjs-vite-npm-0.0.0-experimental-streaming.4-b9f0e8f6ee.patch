@@ -1,5 +1,5 @@
 diff --git a/dist/runFeServer.js b/dist/runFeServer.js
-index a85dcda496bb6de225fa002466b464c83d955261..b94465d69e7e01206a3bd816a0aeefca61d937c5 100644
+index a85dcda496bb6de225fa002466b464c83d955261..f665933438ad7b948ba1c52952174ed3c2e56192 100644
 --- a/dist/runFeServer.js
 +++ b/dist/runFeServer.js
 @@ -59,6 +59,30 @@ async function runFeServer() {
@@ -33,15 +33,6 @@ index a85dcda496bb6de225fa002466b464c83d955261..b94465d69e7e01206a3bd816a0aeefca
  
    // 👉 2. Proxy the api server
    // @TODO we need to be able to specify whether proxying is required or not
-@@ -73,7 +97,7 @@ async function runFeServer() {
-       [`^${rwConfig.web.apiUrl}`]: '' // remove base path
-     },
- 
--    target: `http://localhost:${rwConfig.api.port}`
-+    target: `http://0.0.0.0:${rwConfig.api.port}`
-   }));
- 
-   // 👉 3. Handle all other requests with the server entry
 @@ -86,6 +110,17 @@ async function runFeServer() {
        const {
          serverEntry
